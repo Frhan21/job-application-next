@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import type { ApplicationStage } from "@prisma/client";
+import type { ApplicationStage } from "@/server/types";
 
 interface PipelineSummaryProps {
     data: Record<ApplicationStage, number>;

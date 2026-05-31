@@ -1,6 +1,6 @@
 "use client";
 
-import type { ApplicationStage } from "@prisma/client";
+import type { ApplicationStage } from "@/server/types";
 import { PipelineColumn } from "./pipeline-column";
 
 type ApplicationWithDetails = {

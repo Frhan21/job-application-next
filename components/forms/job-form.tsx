@@ -5,7 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
 import { createJobSchema, type CreateJobInput } from "@/server/schemas/job.schema";
 import { createJobAction, updateJobAction } from "@/server/actions/job.action";
-import type { JobStatus, Job } from "@prisma/client";
+import type { JobStatus, Job } from "@/server/types";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";

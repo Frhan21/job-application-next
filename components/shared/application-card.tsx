@@ -1,6 +1,6 @@
 "use client";
 
-import type { ApplicationStage } from "@prisma/client";
+import type { ApplicationStage } from "@/server/types";
 import { updateApplicationStageAction } from "@/server/actions/application.action";
 import { toast } from "sonner";
 import { format } from "date-fns";

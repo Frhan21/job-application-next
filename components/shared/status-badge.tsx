@@ -1,5 +1,5 @@
 import { Badge } from "@/components/ui/badge";
-import type { JobStatus, ApplicationStage } from "@prisma/client";
+import type { JobStatus, ApplicationStage } from "@/server/types";
 
 interface StatusBadgeProps {
     status?: JobStatus;

@@ -32,7 +32,7 @@ import { StatusBadge } from "../shared/status-badge";
 import { useState } from "react";
 import { deleteCandidateAction } from "@/server/actions/candidate.action";
 import { toast } from "sonner";
-import type { ApplicationStage } from "@prisma/client";
+import type { ApplicationStage } from "@/server/types";
 
 type ApplicationWithJob = {
     id: string;

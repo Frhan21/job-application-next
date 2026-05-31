@@ -5,7 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
 import { createCandidateSchema, type CreateCandidateInput } from "@/server/schemas/candidate.schema";
 import { createCandidateAction, updateCandidateAction } from "@/server/actions/candidate.action";
-import type { Candidate } from "@prisma/client";
+import type { Candidate } from "@/server/types";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
