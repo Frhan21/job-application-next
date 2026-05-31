@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/select";
 import { Search } from "lucide-react";
 import { useDebouncedCallback } from "use-debounce";
-import { JobStatus } from "@prisma/client";
+
 
 export function JobSearchFilter() {
     const router = useRouter();
@@ -61,8 +61,8 @@ export function JobSearchFilter() {
                     </SelectTrigger>
                     <SelectContent>
                         <SelectItem value="ALL">All Status</SelectItem>
-                        <SelectItem value={JobStatus.OPEN}>Open</SelectItem>
-                        <SelectItem value={JobStatus.CLOSED}>Closed</SelectItem>
+                        <SelectItem value="OPEN">Open</SelectItem>
+                        <SelectItem value="CLOSED">Closed</SelectItem>
                     </SelectContent>
                 </Select>
             </div>

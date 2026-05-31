@@ -1,6 +1,6 @@
 "use client";
 
-import { ApplicationStage } from "@prisma/client";
+import type { ApplicationStage } from "@prisma/client";
 import { updateApplicationStageAction } from "@/server/actions/application.action";
 import { toast } from "sonner";
 import { format } from "date-fns";
@@ -75,20 +75,20 @@ export function ApplicationCard({ application }: ApplicationCardProps) {
                         <DropdownMenuLabel>Move to...</DropdownMenuLabel>
                         <DropdownMenuSeparator />
                         <DropdownMenuItem 
-                            disabled={application.stage === ApplicationStage.APPLIED}
-                            onClick={() => handleMove(ApplicationStage.APPLIED)}
+                            disabled={application.stage === "APPLIED"}
+                            onClick={() => handleMove("APPLIED")}
                         >
                             Applied
                         </DropdownMenuItem>
                         <DropdownMenuItem 
-                            disabled={application.stage === ApplicationStage.INTERVIEW}
-                            onClick={() => handleMove(ApplicationStage.INTERVIEW)}
+                            disabled={application.stage === "INTERVIEW"}
+                            onClick={() => handleMove("INTERVIEW")}
                         >
                             Interview
                         </DropdownMenuItem>
                         <DropdownMenuItem 
-                            disabled={application.stage === ApplicationStage.HIRED}
-                            onClick={() => handleMove(ApplicationStage.HIRED)}
+                            disabled={application.stage === "HIRED"}
+                            onClick={() => handleMove("HIRED")}
                         >
                             Hired
                         </DropdownMenuItem>

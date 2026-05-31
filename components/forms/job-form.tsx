@@ -5,7 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
 import { createJobSchema, type CreateJobInput } from "@/server/schemas/job.schema";
 import { createJobAction, updateJobAction } from "@/server/actions/job.action";
-import { JobStatus, Job } from "@prisma/client";
+import type { JobStatus, Job } from "@prisma/client";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -42,7 +42,7 @@ export function JobForm({ initialData, isEdit = false }: JobFormProps) {
             department: initialData?.department || "",
             location: initialData?.location || "",
             description: initialData?.description || "",
-            status: initialData?.status || JobStatus.OPEN,
+            status: initialData?.status || "OPEN",
         },
     });
 
@@ -129,8 +129,8 @@ export function JobForm({ initialData, isEdit = false }: JobFormProps) {
                                         </SelectTrigger>
                                     </FormControl>
                                     <SelectContent>
-                                        <SelectItem value={JobStatus.OPEN}>Open</SelectItem>
-                                        <SelectItem value={JobStatus.CLOSED}>Closed</SelectItem>
+                                        <SelectItem value="OPEN">Open</SelectItem>
+                                        <SelectItem value="CLOSED">Closed</SelectItem>
                                     </SelectContent>
                                 </Select>
                                 <FormMessage />

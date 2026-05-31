@@ -1,6 +1,6 @@
 "use client";
 
-import { ApplicationStage } from "@prisma/client";
+import type { ApplicationStage } from "@prisma/client";
 import { ApplicationCard } from "./application-card";
 import { cn } from "@/lib/utils";
 

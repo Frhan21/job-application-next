@@ -145,3 +145,11 @@ npm run build
 npm start
 ```
 *Note: Ensure your production environment provides a PostgreSQL database and valid `DATABASE_URL` and `NEXTAUTH_SECRET` environment variables.*
+
+### Deploying to Vercel
+When deploying to Vercel, **you do NOT need to set the `NEXTAUTH_URL` environment variable.** 
+NextAuth automatically detects the `VERCEL_URL` environment variable provided by Vercel and configures the URLs automatically for both production and preview deployments. 
+
+You only need to set:
+1. `DATABASE_URL`
+2. `NEXTAUTH_SECRET` (You can generate one using `openssl rand -base64 32`)
