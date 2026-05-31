@@ -1,5 +1,5 @@
 import prisma from "@/lib/prisma";
-import { ApplicationStage } from "@prisma/client";
+import type { ApplicationStage } from "@/server/types";
 
 export const dashboardRepository = {
     async countJobs() {
@@ -14,7 +14,7 @@ export const dashboardRepository = {
         return await prisma.application.count();
     },
 
-    async countApplicationsByStage() {
+    async countApplicationsByStage(): Promise<Record<ApplicationStage, number>> {
         const result = await prisma.application.groupBy({
             by: ['stage'],
             _count: {
@@ -22,15 +22,14 @@ export const dashboardRepository = {
             },
         });
 
-        // Convert the result into a Map or Record for easier access
-        const counts = {
-            [ApplicationStage.APPLIED]: 0,
-            [ApplicationStage.INTERVIEW]: 0,
-            [ApplicationStage.HIRED]: 0,
+        const counts: Record<ApplicationStage, number> = {
+            "APPLIED": 0,
+            "INTERVIEW": 0,
+            "HIRED": 0,
         };
 
         result.forEach((item) => {
-            counts[item.stage] = item._count.stage;
+            counts[item.stage as ApplicationStage] = item._count.stage;
         });
 
         return counts;
